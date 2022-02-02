@@ -25,10 +25,23 @@ fun readNumber2(reader: BufferedReader){
     println(number) // 실행되지 않음
 }
 
+// catch 에서 값 반환
+fun readNumber3(reader: BufferedReader) {
+    val number = try {
+        Integer.parseInt(reader.readLine())
+    } catch (e: NumberFormatException) {
+        null
+    }
+    println(number) // null 찍힘
+}
+
 fun main() {
     val reader = BufferedReader(StringReader("1234"))
     println(readNumber(reader))
 
     val reader2 = BufferedReader(StringReader("12a3412412"))
     readNumber2(reader2)
+
+    val reader3 = BufferedReader(StringReader("2312312312"))
+    readNumber3(reader3)
 }
