@@ -1,4 +1,4 @@
-package chapter06
+package chap06
 
 fun <T> printHashCode(t: T) {
     println(t?.hashCode()) // t 는 null 일수 있음

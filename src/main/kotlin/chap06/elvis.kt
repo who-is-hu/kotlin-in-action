@@ -1,4 +1,4 @@
-package chapter06
+package chap06
 
 class Address(val streetAddress: String, val zipCode: Int,
     val city: String, val country: String)

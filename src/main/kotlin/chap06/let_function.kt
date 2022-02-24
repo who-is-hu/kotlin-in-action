@@ -1,4 +1,4 @@
-package chapter06
+package chap06
 
 fun sendEmailTo(email: String) {
     println("sending email to $email")
