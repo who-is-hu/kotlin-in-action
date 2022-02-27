@@ -12,5 +12,17 @@ fun main() {
 
     // erasure 의 한계
     // 실행시점에 인스턴스의 타입검사 못함
-    // if (value is List<String>) { }
+
+    // if (value is List<*>) { } list인건 알지만 무슨 list인지는 모를
+    // if (value is List<String>) { } 이건 컴파일 에러
+
+    printSum(listOf(1,2,3))
+    //printSum(listOf("1","2")) // 런타임에 캐스팅에러가 남 => List<Int>가 런타임에 List로 소거되기때문에 캐스팅이 가능해서 sum호출하다 에러
+    //printSum(setOf(1,2)) // 기저타입 안맞아서 argumentException
+}
+
+fun printSum(c: Collection<*>) {
+    val intList = c as? List<Int>
+        ?: throw IllegalArgumentException("list is expected")
+    println(intList.sum())
 }

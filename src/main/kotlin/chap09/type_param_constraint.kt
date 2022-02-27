@@ -1,8 +1,8 @@
 package chap09
 
-// 상한 Number 거나 그 자식클래스
+ //상한 Number 거나 그 자식클래스
 fun <T: Number> List<T>.sum(): T {
-    return sum();
+    return get(0)
 }
 
 fun <T: Number> oneHalf(value: T) : Double {
